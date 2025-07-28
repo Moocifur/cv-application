@@ -1,105 +1,89 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-
 .App {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
 }
 
 .App h1 {
   text-align: center;
-  color: #333;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 50px;
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Component section */
 .cv-section {
   background: white;
-  margin: 20px 0;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 30px 0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e9ecef;
+  transition: box-shadow 0.3s ease;
+}
+
+.cv-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .cv-section h2 {
   color: #2c3e50;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-/* Input styling */
+/* Form styling */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-input {
   width: 100%;
-  padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
+  padding: 14px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   font-size: 16px;
-  transition: border-color 0.3s;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #fff;
 }
 
 .form-input:focus {
   outline: none;
   border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-input::placeholder {
+  color: #6c757d;
 }
 
 /* Button styling */
 .btn {
-  padding: 12px 24px;
+  padding: 12px 28px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
   margin-right: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .btn-primary {
@@ -112,24 +96,68 @@
 }
 
 .btn-secondary {
-    background-color: #95a5a6;
-    color: white;
+  background-color: #6c757d;
+  color: white;
 }
 
 .btn-secondary:hover {
-  background-color: #7f8c8d;
+  background-color: #5a6268;
 }
 
 /* Display mode styling */
+.display-info {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
 .display-info p {
-  margin: 10px 0;
+  margin: 12px 0;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #495057;
 }
 
 .display-info strong {
   color: #2c3e50;
-  min-width: 120px;
+  min-width: 140px;
   display: inline-block;
+  font-weight: 600;
 }
 
+/* Empty state styling */
+.display-info p:empty::after {
+  content: "Not provided";
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px 15px;
+  }
+  
+  .App h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cv-section {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .display-info strong {
+    min-width: auto;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
